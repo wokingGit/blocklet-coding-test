@@ -13,5 +13,6 @@ namespace Express {
       provider: string;
       walletOS: string;
     };
+    db?: Database;
   }
 }

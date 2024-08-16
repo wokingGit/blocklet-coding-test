@@ -1,14 +1,19 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './pages/home';
+import ProfileInfo from './pages/ProfileInfo';
+import { NotificationProvider } from './notification-context';
 
 function App() {
   return (
     <div className="app">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      <NotificationProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile-info" element={<ProfileInfo />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </NotificationProvider>
     </div>
   );
 }

@@ -10,12 +10,18 @@ import fallback from '@blocklet/sdk/lib/middlewares/fallback';
 
 import logger from './libs/logger';
 import routes from './routes';
+import { initializeDatabase } from './db';
 
 dotenv.config();
 
 const { name, version } = require('../../package.json');
 
 export const app = express();
+
+// 初始化数据库
+initializeDatabase().catch((err) => {
+  console.error('初始化数据库失败:', err);
+});
 
 app.set('trust proxy', true);
 app.use(cookieParser());
