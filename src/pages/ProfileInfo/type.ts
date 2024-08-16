@@ -17,5 +17,5 @@ export type EditLabelList = {
   required: boolean;
   isError: boolean;
   helperText: string;
-  rule: ((value: string) => boolean) | null;
+  rule: ((value: string | number | undefined) => boolean) | null;
 };

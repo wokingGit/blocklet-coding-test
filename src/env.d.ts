@@ -1,3 +1,7 @@
 declare var blocklet: { prefix: string } | undefined;
 
 declare module '*.svg';
+declare module '*.png' {
+  const value: string;
+  export default value;
+}

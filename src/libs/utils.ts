@@ -16,4 +16,12 @@ function CapFirstLetter(value: string): string {
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
-export { getFirstLetter, CapFirstLetter };
+/** 字段校验为空 */
+const isFieldEmpty = (value: any) => {
+  // 将 value 转换为字符串
+  const stringValue = String(value);
+  // 检查转换后的字符串是否为空
+  return stringValue.trim() === '';
+};
+
+export { getFirstLetter, CapFirstLetter, isFieldEmpty };
